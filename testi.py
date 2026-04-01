@@ -1,8 +1,20 @@
  #kalalajit = ["kuha", "ahven", "taimen", "lohi", "hauki", "siika"]
 
+#def kalastaminen():
+#kalastuksen toiminnallisuus
+
+#def reppu():
+#mitä repussa on 
 
 def peliin():
     print("Päästiin peliin")
+
+    while True:
+        print("Päästiin peliin")
+        print("Valitse 1, jos haluat kalastaa")
+        print("Valitse 2, jos tarkastaa repun sisällön")
+    #repussa on kalat ja syötit
+
 
 def paavalikko():
 
@@ -28,7 +40,6 @@ def paavalikko():
         else:
             print("Syötä numero 1 tai 2!")
 
-    print(f"debug {valinta}")
 
 paavalikko()
 
