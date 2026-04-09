@@ -1,31 +1,37 @@
 import random
+from reppu_luokka import Reppu
+from kala_luokka import Kala
+
+reppu = Reppu()
+
 kalalajit = ["kuha", "ahven", "taimen", "lohi", "hauki", "siika"]
 paino = [random.uniform(0.1, 15) for x in range(40)]
 salaatit = ["Sait merilevää", "Syötti irtosi", "Siima katkesi"]
+
 
 def kalastaminen():
     todennäköisyys = random.random()
     if todennäköisyys <= 0.70:
         saalis = random.choice(kalalajit)
         saaliin_paino = round(random.choice(paino), 3)
-        print(f"Nappasit: {saalis}, {saaliin_paino}kg")
-        peliin()
-        
 
-    elif todennäköisyys >= 0.7:
+        print(f"Nappasit: {saalis}, {saaliin_paino}kg")
+
+        k1 = Kala(saalis, saaliin_paino)
+        reppu.lisaa(k1)
+
+        peliin()
+
+    else:
         salaatti = random.choice(salaatit)
         print(salaatti)
+        peliin()
 
-#kalastuksen toiminnallisuus
 
-#def reppu():
-#mitä repussa on 
 
 def peliin():
-    print("Päästiin peliin")
 
     while True:
-        print("Päästiin peliin")
         print("Valitse 1, jos haluat kalastaa")
         print("Valitse 2, jos tarkastaa repun sisällön")
 
@@ -37,7 +43,8 @@ def peliin():
             break
         
         elif valinta == "2":
-            print("Repun sisältö: ")
+            print(reppu.merkkijonona())
+            
             break
 
     #repussa on kalat ja syötit
