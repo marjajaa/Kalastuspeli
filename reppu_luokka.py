@@ -10,6 +10,8 @@ class Reppu:
     def repullisen_arvo(self):
         return sum(kala.arvo() for kala in self.sisalto)
 
+    def tyhjenna_reppu(self):
+        self.sisalto.clear()
 
 
     def merkkijonona(self):
